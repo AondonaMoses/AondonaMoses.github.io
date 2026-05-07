@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aondona Moses Iorumbur, Medical AI Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f5f3ef;
+  --bg2:       #edeae4;
+  --white:     #ffffff;
+  --ink:       #1a1a24;
+  --ink2:      #3a3a4a;
+  --muted:     #7a7a8a;
+  --rule:      #d8d4cc;
+  --navy:      #1b2b4b;
+  --blue:      #2563b0;
+  --blue-lt:   #e8f0fb;
+  --teal:      #1a7a6e;
+  --teal-lt:   #e4f4f2;
+  --amber:     #b05c1b;
+  --amber-lt:  #faf0e8;
+  --red:       #b02832;
+  --red-lt:    #fbeaea;
+  --f-display: 'Cormorant Garamond', Georgia, serif;
+  --f-body:    'Outfit', sans-serif;
+  --f-mono:    'JetBrains Mono', monospace;
+  --radius:    6px;
+  --shadow:    0 2px 16px rgba(26,27,36,0.07);
+  --shadow-lg: 0 8px 40px rgba(26,27,36,0.10);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(245,243,239,0.93);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-brand { font-family: var(--f-display); font-size: 1.25rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.18s; }
+.nav-links a:hover { color: var(--navy); }
+
+/* HERO */
+#hero {
+  padding: 116px 5vw 80px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: var(--f-mono); font-size: 0.72rem; color: var(--blue);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.4rem;
+}
+.hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+h1 { font-family: var(--f-display); font-size: clamp(3.2rem, 5.5vw, 5rem); font-weight: 700; line-height: 1.04; color: var(--navy); margin-bottom: 1.5rem; }
+h1 em { font-style: italic; color: var(--blue); }
+.hero-bio { font-size: 1.05rem; color: var(--ink2); max-width: 520px; margin-bottom: 2.4rem; line-height: 1.85; }
+.hero-ctas { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+.btn { display: inline-block; font-family: var(--f-body); font-size: 0.82rem; font-weight: 600; padding: 0.75rem 1.75rem; border-radius: var(--radius); text-decoration: none; letter-spacing: 0.03em; transition: all 0.18s; cursor: pointer; }
+.btn-primary { background: var(--navy); color: #fff; border: 1.5px solid var(--navy); }
+.btn-primary:hover { background: var(--blue); border-color: var(--blue); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+.btn-outline:hover { background: var(--navy); color: #fff; }
+
+.hero-panel { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 2rem; box-shadow: var(--shadow); }
+.hero-panel-title { font-family: var(--f-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--rule); }
+.hero-panel-item { display: flex; align-items: flex-start; gap: 0.9rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
+.hero-panel-item:last-child { border-bottom: none; padding-bottom: 0; }
+.hpi-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); margin-top: 0.5rem; flex-shrink: 0; }
+.hpi-dot.teal { background: var(--teal); }
+.hpi-dot.amber { background: var(--amber); }
+.hpi-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.1rem; font-weight: 500; }
+.hpi-value { font-size: 0.9rem; color: var(--ink); font-weight: 500; }
+
+/* SECTION SHELL */
+.section-wrap { max-width: 1180px; margin: 0 auto; padding: 5rem 5vw; }
+.section-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
+.section-num { font-family: var(--f-mono); font-size: 0.68rem; color: var(--blue); letter-spacing: 0.18em; }
+h2 { font-family: var(--f-display); font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.1; }
+.rule { flex: 1; height: 1px; background: var(--rule); }
+
+/* ABOUT */
+#about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 4.5rem; align-items: start; }
+.about-text p { color: var(--ink2); margin-bottom: 1.1rem; font-size: 1rem; }
+.about-text p strong { color: var(--ink); font-weight: 600; }
+.about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
+.chip { font-size: 0.75rem; font-weight: 500; padding: 0.3rem 0.8rem; border-radius: 100px; border: 1px solid var(--rule); color: var(--ink2); background: var(--bg); }
+.chip.blue { background: var(--blue-lt); color: var(--blue); border-color: #bdd3f3; }
+.chip.teal { background: var(--teal-lt); color: var(--teal); border-color: #a8d8d3; }
+.affiliations { display: flex; flex-direction: column; gap: 0.9rem; }
+.aff-card { background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.1rem 1.3rem; border-left: 3px solid var(--blue); transition: box-shadow 0.18s; }
+.aff-card:hover { box-shadow: var(--shadow); }
+.aff-card.teal-l { border-left-color: var(--teal); }
+.aff-card.amber-l { border-left-color: var(--amber); }
+.aff-role { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+.aff-org { font-family: var(--f-mono); font-size: 0.68rem; color: var(--blue); letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.aff-card.teal-l .aff-org { color: var(--teal); }
+.aff-card.amber-l .aff-org { color: var(--amber); }
+.aff-detail { font-size: 0.82rem; color: var(--muted); }
+
+/* RESEARCH */
+#research { background: var(--bg); }
+.research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.4rem; }
+.research-card { background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 1.75rem; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+.research-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+.research-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue); }
+.research-card.teal-t::before { background: var(--teal); }
+.research-card.amber-t::before { background: var(--amber); }
+.research-card.red-t::before { background: var(--red); }
+.pub-status { display: inline-flex; align-items: center; font-family: var(--f-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.28rem 0.7rem; border-radius: 100px; margin-bottom: 1rem; width: fit-content; }
+.pub-status.submitted { background: var(--blue-lt); color: var(--blue); }
+.pub-status.active    { background: var(--teal-lt); color: var(--teal); }
+.pub-status.review    { background: var(--amber-lt); color: var(--amber); }
+.pub-status.awarded   { background: var(--red-lt); color: var(--red); }
+.research-card h3 { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; color: var(--navy); line-height: 1.35; margin-bottom: 0.75rem; }
+.research-card p { font-size: 0.87rem; color: var(--muted); flex: 1; line-height: 1.75; }
+.card-meta { margin-top: 1.4rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.card-meta-row { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.4rem; }
+.meta-key { font-family: var(--f-mono); font-size: 0.62rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; width: 72px; flex-shrink: 0; }
+.meta-val { font-size: 0.8rem; color: var(--ink2); }
+.tech-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.8rem; }
+.tech { font-size: 0.7rem; color: var(--muted); background: var(--bg); border: 1px solid var(--rule); padding: 0.2rem 0.55rem; border-radius: 4px; }
+
+/* PROJECTS */
+#projects { background: var(--white); }
+.projects-list { display: flex; flex-direction: column; gap: 1.2rem; }
+.proj-row { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: start; transition: box-shadow 0.18s; }
+.proj-row:hover { box-shadow: var(--shadow); }
+.proj-row h3 { font-family: var(--f-display); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.proj-row p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.75rem; }
+.proj-year { font-family: var(--f-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; text-align: right; white-space: nowrap; margin-top: 0.2rem; }
+
+/* HONOURS */
+#honours { background: var(--bg); }
+.honours-table { width: 100%; border-collapse: collapse; }
+.honours-table thead tr { border-bottom: 2px solid var(--navy); }
+.honours-table th { font-family: var(--f-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; text-align: left; padding: 0 1rem 0.75rem 0; font-weight: 400; }
+.honours-table td { padding: 1.1rem 1rem 1.1rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 0.9rem; }
+.honours-table tr:last-child td { border-bottom: none; }
+.hon-year { font-family: var(--f-mono); font-size: 0.78rem; color: var(--blue); white-space: nowrap; }
+.hon-name { font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+.hon-org { font-size: 0.82rem; color: var(--muted); }
+.hon-badge { font-family: var(--f-mono); font-size: 0.62rem; padding: 0.25rem 0.65rem; border-radius: 100px; white-space: nowrap; }
+.hon-badge.blue  { background: var(--blue-lt); color: var(--blue); }
+.hon-badge.teal  { background: var(--teal-lt); color: var(--teal); }
+.hon-badge.amber { background: var(--amber-lt); color: var(--amber); }
+
+/* SKILLS */
+#skills { background: var(--white); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
+.skill-block { background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.3rem 1.4rem; }
+.skill-block-title { font-family: var(--f-mono); font-size: 0.68rem; color: var(--navy); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.9rem; }
+.skill-items { display: flex; flex-wrap: wrap; gap: 0.38rem; }
+.sk { font-size: 0.78rem; color: var(--ink2); background: var(--white); border: 1px solid var(--rule); padding: 0.25rem 0.65rem; border-radius: 4px; }
+
+/* CONTACT */
+#contact { background: var(--navy); }
+#contact .section-wrap { padding-top: 5rem; padding-bottom: 5rem; }
+#contact .section-num { color: #6a90c8; }
+#contact h2 { color: #fff; }
+#contact h2 em { font-style: italic; color: #7ab4f0; }
+#contact .rule { background: rgba(255,255,255,0.12); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+.contact-desc { color: rgba(255,255,255,0.6); font-size: 0.97rem; line-height: 1.85; margin-bottom: 2rem; }
+.contact-links { display: flex; flex-direction: column; gap: 0.85rem; }
+.clink { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 1rem 1.3rem; text-decoration: none; transition: background 0.18s, border-color 0.18s; }
+.clink:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.22); }
+.clink-icon { font-size: 1rem; width: 1.4rem; text-align: center; color: #7ab4f0; flex-shrink: 0; }
+.clink-label { font-size: 0.68rem; font-family: var(--f-mono); color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.1rem; }
+.clink-val { font-size: 0.88rem; color: rgba(255,255,255,0.85); }
+
+/* FOOTER */
+footer { background: #12192e; border-top: 1px solid rgba(255,255,255,0.06); padding: 1.75rem 5vw; display: flex; justify-content: space-between; align-items: center; }
+footer p { font-family: var(--f-mono); font-size: 0.68rem; color: rgba(255,255,255,0.3); letter-spacing: 0.06em; }
+footer span { color: rgba(255,255,255,0.55); }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; padding: 100px 1.5rem 3rem; gap: 2.5rem; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .section-wrap { padding: 4rem 1.5rem; }
+  .proj-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+/* PUBLICATIONS */
+#publications { background: var(--bg); }
+.pub-list { display: flex; flex-direction: column; gap: 0; }
+.pub-item {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.pub-item:last-child { border-bottom: none; }
+.pub-num {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--blue);
+  font-weight: 600;
+  padding-top: 0.15rem;
+  text-align: right;
+}
+.pub-body {}
+.pub-title {
+  font-family: var(--f-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 0.3rem;
+}
+.pub-authors { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.25rem; line-height: 1.6; }
+.pub-authors strong { color: var(--ink2); font-weight: 600; }
+.pub-venue { font-size: 0.8rem; color: var(--ink2); margin-bottom: 0.3rem; }
+.pub-venue em { font-style: italic; }
+.pub-links { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.pub-link {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  background: var(--blue-lt);
+  color: var(--blue);
+  border: 1px solid #bdd3f3;
+  transition: background 0.15s;
+}
+.pub-link:hover { background: #d0e4f8; }
+.pub-badge {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+}
+.pub-badge.first { background: var(--teal-lt); color: var(--teal); border: 1px solid #a8d8d3; }
+.pub-badge.collab { background: var(--bg2); color: var(--muted); border: 1px solid var(--rule); }
+.pub-badge.submitted { background: var(--amber-lt); color: var(--amber); border: 1px solid #e8c9a0; }
+
+/* CERTIFICATIONS */
+#certifications { background: var(--white); }
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+.cert-card {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem;
+  border-left: 3px solid var(--teal);
+  transition: box-shadow 0.18s;
+}
+.cert-card:hover { box-shadow: var(--shadow); }
+.cert-card.blue-l { border-left-color: var(--blue); }
+.cert-name { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+.cert-org { font-family: var(--f-mono); font-size: 0.68rem; color: var(--teal); letter-spacing: 0.05em; margin-bottom: 0.35rem; }
+.cert-card.blue-l .cert-org { color: var(--blue); }
+.cert-year { font-size: 0.78rem; color: var(--muted); }
+
+/* TALKS */
+#talks { background: var(--bg); }
+.talks-list { display: flex; flex-direction: column; gap: 1rem; }
+.talk-item {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  transition: box-shadow 0.18s;
+}
+.talk-item:hover { box-shadow: var(--shadow); }
+.talk-title { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+.talk-event { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+.talk-event strong { color: var(--ink2); font-weight: 500; }
+.talk-date { font-family: var(--f-mono); font-size: 0.7rem; color: var(--blue); letter-spacing: 0.06em; white-space: nowrap; text-align: right; margin-top: 0.15rem; }
+
+
+/* PROFILE PHOTO */
+.hero-left { display: flex; flex-direction: column; gap: 0; }
+.profile-photo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--rule);
+  background: var(--bg2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.profile-photo-placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid var(--rule);
+  background: var(--bg2);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+.profile-photo-placeholder svg { opacity: 0.35; }
+.profile-photo-placeholder span {
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.profile-name-block {}
+.profile-name-block .hero-eyebrow { margin-bottom: 0.5rem; }
+
+
+/* DARK MODE */
+body.dark {
+  --bg:        #0f0f14;
+  --bg2:       #18181f;
+  --white:     #1a1a24;
+  --ink:       #e8e8f0;
+  --ink2:      #b0b0c8;
+  --muted:     #6060a0;
+  --rule:      #2a2a3a;
+  --navy:      #c8d8f0;
+  --blue:      #6aa8f0;
+  --blue-lt:   #0e1e38;
+  --teal:      #4ac8b8;
+  --teal-lt:   #0a2028;
+  --amber:     #f0a060;
+  --amber-lt:  #281808;
+  --red:       #f06070;
+  --red-lt:    #280810;
+}
+
+body.dark nav {
+  background: rgba(15,15,20,0.93);
+}
+
+body.dark .hero-panel,
+body.dark .research-card,
+body.dark .skill-block,
+body.dark .cert-card,
+body.dark .talk-item {
+  background: #1a1a24;
+}
+
+body.dark .aff-card,
+body.dark .proj-row,
+body.dark .pub-item {
+  background: #18181f;
+}
+
+body.dark #about,
+body.dark #projects,
+body.dark #skills,
+body.dark #certifications {
+  background: #1a1a24;
+}
+
+body.dark #hero,
+body.dark #research,
+body.dark #talks,
+body.dark #honours {
+  background: #0f0f14;
+}
+
+body.dark #contact {
+  background: #0a0f1e;
+}
+
+body.dark #contact h2 { color: #e8e8f0; }
+body.dark #contact h2 em { color: #6aa8f0; }
+body.dark #contact .section-num { color: #4a6a90; }
+body.dark #contact .rule { background: rgba(255,255,255,0.08); }
+body.dark #contact .contact-desc { color: rgba(232,232,240,0.6); }
+body.dark #contact .clink {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+body.dark #contact .clink:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.18);
+}
+body.dark #contact .clink-label { color: rgba(255,255,255,0.35); }
+body.dark #contact .clink-val { color: rgba(232,232,240,0.85); }
+body.dark #contact .clink-icon { color: #6aa8f0; }
+body.dark #contact .btn {
+  background: #e8e8f0;
+  color: #0a0f1e;
+  border-color: #e8e8f0;
+}
+
+body.dark footer {
+  background: #06090f;
+  border-top-color: rgba(255,255,255,0.05);
+}
+
+body.dark .sk,
+body.dark .tech {
+  background: #0f0f14;
+}
+
+body.dark .chip {
+  background: #18181f;
+}
+
+body.dark .honours-table thead tr {
+  border-bottom-color: #c8d8f0;
+}
+
+/* TOGGLE BUTTON */
+.dark-toggle {
+  background: none;
+  border: 1.5px solid var(--rule);
+  border-radius: 100px;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.dark-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Aondona M. Iorumbur</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#honours">Honours</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://scholar.google.com/citations?user=3ewd3ikAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+  </ul>
+  <button class="dark-toggle" id="darkToggle" onclick="toggleDark()">
+    <span id="darkIcon">🌙</span> <span id="darkLabel">Dark</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="profile-photo-wrap">
+
+      <div class="profile-name-block">
+        <div class="hero-eyebrow">Medical AI Researcher</div>
+        <h1 style="font-size:clamp(2.2rem,4vw,3.8rem);">Aondona M.<br><em>Iorumbur</em></h1>
+      </div>
+    </div>
+    <p class="hero-bio">
+      Researcher with expertise in machine learning, deep learning, and neural network architectures for clinical applications, with a focus on medical imaging for early cancer detection, segmentation, and diagnosis in resource-limited settings. Experienced in predictive analysis for healthcare outcomes and developing robust AI-driven tools that address real-world challenges in health care.
+    </p>
+    <div class="hero-ctas">
+      <a href="#research" class="btn btn-primary">View Research</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <a href="https://scholar.google.com/citations?user=3ewd3ikAAAAJ&hl=en" class="btn btn-outline" target="_blank">Google Scholar</a>
+    </div>
+  </div>
+
+  <div class="hero-panel">
+    <div class="hero-panel-title">Affiliations</div>
+
+    <div class="hero-panel-item">
+      <div class="hpi-dot teal"></div>
+      <div>
+        <div class="hpi-label">Programme</div>
+        <div class="hpi-value">Programme Manager, Sprint AI training for AfRican medical imaging Knowledge translation (SPARK) Academy</div>
+      </div>
+    </div>
+    <div class="hero-panel-item">
+      <div class="hpi-dot teal"></div>
+      <div>
+        <div class="hpi-label">Co-Organizer</div>
+        <div class="hpi-value">PRECISE Cancer Care in Africa, African Breast Ultrasound Classification and Segmentation Challenge</div>
+      </div>
+    </div>
+    <div class="hero-panel-item">
+      <div class="hpi-dot amber"></div>
+      <div>
+        <div class="hpi-label">Founder</div>
+        <div class="hpi-value">NileEdge Innovations</div>
+      </div>
+    </div>
+    <div class="hero-panel-item">
+      <div class="hpi-dot"></div>
+      <div>
+        <div class="hpi-label">Education</div>
+        <div class="hpi-value">MSc Medical Physics, University of Lagos</div>
+        <div class="hpi-value" style="margin-top:0.3rem;font-size:0.82rem;color:var(--muted);">BTech Physics Telecommunication, Federal University of Technology, Minna</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">01</span>
+      <h2>About</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid fade-up">
+      <div class="about-text">
+        <p>I am a Medical AI Researcher and educator based in Lagos, Nigeria, holding an MSc in Medical Physics from the University of Lagos and a BTech in Physics Telecommunication from the Federal University of Technology, Minna. My work sits at the intersection of <strong>physics-informed deep learning</strong> and clinical imaging, with a focus on designing AI systems that perform reliably in settings without the digital infrastructure assumed by most state-of-the-art methods. My research spans 3D MRI reconstruction from unstructured image archives, federated learning for disease detection across distributed African clinical sites, and uncertainty-aware ultrasound segmentation. I believe robust clinical AI must be built for the majority world, not retrofitted to it.</p>
+        <p>As <strong>Programme Manager of SPARK Academy</strong>, I oversee a pan-African AI and medical imaging training programme operating across 15+ countries, designing curriculum, running Kaggle-based hackathon phases, and coordinating teams across the continent.</p>
+        <p>I founded <strong>NileEdge Innovations</strong>, an AI and data science company delivering applied ML solutions across Africa.</p>
+        <div class="about-tags">
+          <span class="chip blue">Physics-Informed ML</span>
+          <span class="chip blue">Medical Imaging</span>
+          <span class="chip teal">Federated Learning</span>
+          <span class="chip teal">MRI Reconstruction</span>
+          <span class="chip">Ultrasound Segmentation</span>
+          <span class="chip">AI for Africa</span>
+          <span class="chip">MICCAI</span>
+          <span class="chip">PyTorch</span>
+        </div>
+      </div>
+      <div class="affiliations">
+
+        <div class="aff-card teal-l">
+          <div class="aff-role">Programme Manager</div>
+          <div class="aff-org">Sprint AI training for AfRican medical imaging Knowledge translation (SPARK) Academy</div>
+          <div class="aff-detail">Pan-African AI and medical imaging training across 15+ countries. Oversees curriculum design, hackathon phases, and team operations.</div>
+        </div>
+        <div class="aff-card teal-l">
+          <div class="aff-role">Co-Organizer</div>
+          <div class="aff-org">PRECISE Cancer Care in Africa, African Breast Ultrasound Classification and Segmentation Challenge</div>
+          <div class="aff-detail">Set up and configure the challenge platform, manage Docker submissions, compile leaderboard results, and coordinate participant communication across African research teams.</div>
+        </div>
+        <div class="aff-card amber-l">
+          <div class="aff-role">Founder & AI Lead</div>
+          <div class="aff-org">NileEdge Innovations</div>
+          <div class="aff-detail">Applied AI and data science company building ML solutions and delivering STEM training across Africa.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">02</span>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="pub-list fade-up">
+
+      <div class="pub-item">
+        <div class="pub-num">1</div>
+        <div class="pub-body">
+          <div class="pub-title">Implementation of Transfer Learning Approach for AI-Based Diagnosis of Brain Tumors in Low-Resource Settings</div>
+          <div class="pub-authors"><strong>Moses A. Iorumbur</strong>, Emmanuel O. Olasehinde, Henry A. Sanni, Michael O. Dada, Bamidele O. Awojoyogbe</div>
+          <div class="pub-venue"><em>Molecular Imaging and Biology</em> 27 (Suppl 2), S1156–S1157 (2025)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s11307-024-01977-z" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge first">First Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">2</div>
+        <div class="pub-body">
+          <div class="pub-title">Performance Evaluation of Machine Learning Classification of Brain Tumors with WEKA and Python Programming</div>
+          <div class="pub-authors">Emmanuel O. Olasehinde, <strong>Moses A. Iorumbur</strong>, Iniobong N. Udeme, Michael O. Dada, Bamidele O. Awojoyogbe</div>
+          <div class="pub-venue"><em>Molecular Imaging and Biology</em> 27 (Suppl 2), S1162–S1163 (2025)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s11307-024-01977-z" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">3</div>
+        <div class="pub-body">
+          <div class="pub-title">SharpXR: Structure-Aware Denoising for Pediatric Chest X-Rays</div>
+          <div class="pub-authors">Ilerioluwakiiye Abolade, Emmanuel Idoko, Solomon Odelola, Adetola Adebanwo, <strong>Aondona Iorumbur</strong>, Udunna Anazodo, Alessandro Crimi, Raymond Confidence</div>
+          <div class="pub-venue"><em>MICCAI 2025</em></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/html/2508.08518v1" class="pub-link" target="_blank">arXiv</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">4</div>
+        <div class="pub-body">
+          <div class="pub-title">How We Won BraTS-SSA 2025: Brain Tumor Segmentation in the Sub-Saharan African Population Using Segmentation-Aware Data Augmentation and Model Ensembling</div>
+          <div class="pub-authors">Claudia Takyi Ankomah, Livingstone Eli Ayivor, Ireneaus Nyame, Leslie Wambo, Patrick Yeboah Bonsu, <strong>Aondona Moses Iorumbur</strong>, Raymond Confidence, Toufiq Musah</div>
+          <div class="pub-venue"><em>arXiv preprint</em> arXiv:2510.03568 (2025)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.48550/arXiv.2510.03568" class="pub-link" target="_blank">arXiv</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">5</div>
+        <div class="pub-body">
+          <div class="pub-title">Bridging the Gap: A Community Driven and AI-Enabled Approach to Early Breast Cancer Detection in Black African Women</div>
+          <div class="pub-authors">Adaobi Emegoakor, Confidence Raymond, Yewande Gbadamosi, Richard Malumba, Charity Umoren, Diana Spence Betancourt, <strong>Aondona M. Iorumbur</strong>, et al.</div>
+          <div class="pub-venue"><em>Medical Image Computing and Computer-Assisted Intervention, MICCAI 2025.</em> Springer, Cham</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/978-3-032-05559-0_29" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">6</div>
+        <div class="pub-body">
+          <div class="pub-title">Training Beyond Convergence: Grokking nnU-Net for Glioma Segmentation in Sub-Saharan MRI</div>
+          <div class="pub-authors">Mohtady Barakat, Omar Salah, Ahmed Yasser, Mostafa Ahmed, Zahirul Arief, Waleed Khan, Dong Zhang, <strong>Aondona Iorumbur</strong>, Confidence Raymond, Mohannad Barakat, Noha Magdy</div>
+          <div class="pub-venue"><em>arXiv preprint</em> arXiv:2601.22637 (2026)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.48550/arXiv.2601.22637" class="pub-link" target="_blank">arXiv</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">7</div>
+        <div class="pub-body">
+          <div class="pub-title">Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI</div>
+          <div class="pub-authors">Ilerioluwakiiye Abolade, Aniekan Udo, Augustine Ojo, Abdulbasit Oyetunji, Hammed Ajigbotosho, <strong>Aondona Iorumbur</strong>, Confidence Raymond, Maruf Adewole</div>
+          <div class="pub-venue">In preparation</div>
+          <div class="pub-links">
+            <span class="pub-badge submitted">In Preparation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">8</div>
+        <div class="pub-body">
+          <div class="pub-title">Lightweight Brain Tumor Segmentation on Low-Resource Systems: A Step-by-Step Guide with 3D U-Net v2</div>
+          <div class="pub-authors">Ayomide Oladele, Raymond Confidence, Dong Zhang, Charity Umoren, <strong>Aondona Iorumbur</strong>, Anu Gbadamosi, Farouk Dako, Maruf Adewole, Udunna Anazodo</div>
+          <div class="pub-venue"><em>protocols.io</em> (2025)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.17504/protocols.io.dm6gpdwmdgzp/v5" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">9</div>
+        <div class="pub-body">
+          <div class="pub-title">MAPS-Glioma: Modality-Specific Augmentation and Tissue-Adaptive Postprocessing for Robust Glioma Segmentation in Resource-Limited Settings</div>
+          <div class="pub-authors">Ayomide B. Oladele, Helena Machibya, Mariam Kaoneka, Frederick Lyimo, Debora Hoza, Immaculata Kafumu, Idris Olalekan, Jeremiah Fadugba, Dong Zhang, <strong>Aondona Iorumbur</strong>, Raymond Confidence, et al.</div>
+          <div class="pub-venue"><em>Segmentation, Classification, and Synthesis for Brain Tumors and Traumatic Brain Injuries (MICCAI 2025)</em>, pp. 274–283 (2026)</div>
+          <div class="pub-links">
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">10</div>
+        <div class="pub-body">
+          <div class="pub-title">A Self-Supervised Framework for Glioma Segmentation Using Swin UNETR</div>
+          <div class="pub-authors">Lesly Tsoptio Fougang, Joseph Muthui Wacira, Amal Jlassi, Dong Zhang, <strong>Aondona Iorumbur</strong>, Confidence Raymond</div>
+          <div class="pub-venue">Book chapter (2026)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/978-3-032-16365-3_32" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">11</div>
+        <div class="pub-body">
+          <div class="pub-title">BRAIN-CATS: Brain Tumour Reliability-Aware Imaging with Neural Networks Using Calibration-Aware Training and Segmentation</div>
+          <div class="pub-authors">Abba Mohammed, Zulyadaini Muhammad Aminu, Ummulkhairi Ibrahim, Amina Suleiman Damo, Theodore Barfoot, Alexander Hammers, Raymond Confidence, <strong>Aondona Iorumbur</strong>, Abdulrazaq Zubair, Mubaraq Yakubu</div>
+          <div class="pub-venue">Book chapter (2026)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/978-3-032-16365-3_26" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">12</div>
+        <div class="pub-body">
+          <div class="pub-title">Domain Adaptation for Adult Glioma Segmentation in Sub-Saharan Africa: An Ensemble of nnU-Net v2 and MedNeXt</div>
+          <div class="pub-authors">Willem P. E. Boonzaier, Farhana Moosa, Kagiso Lebang, Hanifa Jabaar, <strong>Aondona Iorumbur</strong>, Dong Zhang, Confidence Raymond</div>
+          <div class="pub-venue">Book chapter (2026)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/978-3-032-16365-3_23" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">13</div>
+        <div class="pub-body">
+          <div class="pub-title">LiMSA-UNet: A Lightweight Modality-Selective Attention ResUNet for Brain-Tumor Segmentation</div>
+          <div class="pub-authors">Freedmore Sidume, Nkuebe Clement Moleko, Botsile Gorata Masalela, Preference Mangwayana, Lame Kaisara, Refilwe Goitsemang, Topo Lefika Rapula, Dong Zhang, <strong>Aondona Iorumbur</strong>, Confidence Raymond</div>
+          <div class="pub-venue">Book chapter (2026)</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/978-3-032-16365-3_33" class="pub-link" target="_blank">DOI</a>
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">14</div>
+        <div class="pub-body">
+          <div class="pub-title">SenTumorNet: A Lightweight 3D U-Net Model for Brain Tumor Segmentation in Sub-Saharan African MRI Data</div>
+          <div class="pub-authors">Papa Seydou Wane, Abdourahamane Balde, Guy Mbatchou, Dieu-Donné Okalas Ossami, Mariama Dione, Dieumbe Khoule, Mor Diop, Ndeye Maty Bousso, Adama Traore, <strong>Aondona Iorumbur</strong>, Raymond Confidence, Udunna Anazodo</div>
+          <div class="pub-venue"><em>Segmentation, Classification, and Synthesis for Brain Tumors and Traumatic Brain Injuries (MICCAI 2025)</em>, pp. 205–214 (2026)</div>
+          <div class="pub-links">
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-num">15</div>
+        <div class="pub-body">
+          <div class="pub-title">TerangaNet: An Optimized 3D U-Net for Brain Tumor Segmentation in Sub-Saharan African MRI Volumes</div>
+          <div class="pub-authors">Kéba Faye, Abdourahmane Balde, Racky Barro Diatta, Abdoul Wahab Soumare, Penda Ka, Mohameth DIA, Khoudia Sow, Doudou Mohamet Gaye, Mohamadou Bamba Diop, Magatte Diouf, Marième Dieng Fall, Guy Mbatchou, <strong>Aondona Iorumbur</strong>, Raymond Confidence, Udunna Anazodo</div>
+          <div class="pub-venue"><em>Segmentation, Classification, and Synthesis for Brain Tumors and Traumatic Brain Injuries (MICCAI 2025)</em>, pp. 215–223 (2026)</div>
+          <div class="pub-links">
+            <span class="pub-badge collab">Co-Author</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">03</span>
+      <h2>Research (Current Work)</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="research-grid">
+
+      <div class="research-card fade-up">
+        <span class="pub-status submitted">Submitted · MICCAI 2026</span>
+        <h3>Metadata-Free 3D MRI Reconstruction from Unstructured JPEG Archives</h3>
+        <p>Developing a deep learning pipeline for reconstructing 3D MRI volumes from unordered, incomplete image sequences without standard DICOM infrastructure, targeting clinical settings in Africa.</p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="meta-key">Venue</span><span class="meta-val">MICCAI 2026 Main Conference</span></div>
+          <div class="card-meta-row"><span class="meta-key">Award</span><span class="meta-val">AFRICAI Award</span></div>
+        </div>
+      </div>
+
+      <div class="research-card teal-t fade-up">
+        <span class="pub-status active">In Progress · MICCAI MIRASOL 2026</span>
+        <h3>Uncertainty-Aware Breast Ultrasound Segmentation</h3>
+        <p>Uncertainty-aware framework for breast ultrasound segmentation incorporating physics-based priors, targeting early cancer detection in resource-limited clinical settings.</p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="meta-key">Venue</span><span class="meta-val">MICCAI MIRASOL 2026, Pending Submission</span></div>
+        </div>
+      </div>
+
+
+
+      <div class="research-card fade-up">
+        <span class="pub-status active">In Progress · MICCAI MIRASOL 2026</span>
+        <h3>TGAOCL: Temporal Graph-Augmented Ordinal Contrastive Learning</h3>
+        <p>Longitudinal chest X-ray classification using temporal graph networks and contrastive learning to track disease progression over time.</p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="meta-key">Venue</span><span class="meta-val">MICCAI MIRASOL 2026, Pending Submission</span></div>
+        </div>
+      </div>
+
+      <div class="research-card teal-t fade-up">
+        <span class="pub-status active">In Progress · MICCAI MIRASOL 2026</span>
+        <h3>PAAFA: Prevalence-Aware Asynchronous Federated Aggregation</h3>
+        <p>Federated learning approach for tuberculosis detection across distributed African clinical sites, addressing data heterogeneity and privacy constraints in low-resource settings.</p>
+        <div class="card-meta">
+          <div class="card-meta-row"><span class="meta-key">Venue</span><span class="meta-val">MICCAI MIRASOL 2026, Pending Submission</span></div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">04</span>
+      <h2>Collaborative & Other Work</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="projects-list">
+
+      <div class="proj-row fade-up">
+        <div>
+          <h3>SPARK Academy: Programme Operations</h3>
+          <p>Guide new researchers in AI projects, providing mentorship on developing and applying deep learning models for healthcare solutions. Co-developed tailored course content to teach deep learning techniques for neuroimaging. Responsible for designing weekly assignments and Mini Capstone Projects. Collaborate with Team Coordinators and Team Leads to address logistics concerns of team members across 15+ African countries.</p>
+          <div class="tech-row">
+            <span class="tech">Python</span><span class="tech">Excel Automation</span><span class="tech">GitHub Classroom</span><span class="tech">GitHub Actions</span><span class="tech">Kaggle</span>
+          </div>
+        </div>
+        <div class="proj-year">2025–2026</div>
+      </div>
+
+      <div class="proj-row fade-up">
+        <div>
+          <h3>Co-Organizer, PRECISE Cancer Care in Africa, African Breast Ultrasound Classification and Segmentation Challenge</h3>
+          <p>Set up and configure the challenge platform. Manage Docker container submissions, including running and testing on test datasets. Compile and analyze results for leaderboard generation. Coordinate participant communication and provide technical support. Ensure fair evaluation and smooth integration of submissions across multiple African research teams.</p>
+          <div class="tech-row">
+            <span class="tech">Challenge Organization</span><span class="tech">Docker</span><span class="tech">Leaderboard</span><span class="tech">Africa</span>
+          </div>
+        </div>
+        <div class="proj-year">2025</div>
+      </div>
+
+
+
+      <div class="proj-row fade-up">
+        <div>
+          <h3>LearnBase: Adaptive STEM Learning Platform</h3>
+          <p>NileEdge Innovations product. Django-based adaptive learning platform with multi-chapter curriculum, role-based dashboards, and progress tracking. Targeting Nigerian secondary and university students underserved by existing EdTech infrastructure.</p>
+          <div class="tech-row">
+            <span class="tech">Django</span><span class="tech">Python</span><span class="tech">EdTech</span><span class="tech">NileEdge</span>
+          </div>
+        </div>
+        <div class="proj-year">Ongoing</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TALKS -->
+<section id="talks">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">05</span>
+      <h2>Invited Talks & Conferences</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="talks-list fade-up">
+
+      <div class="talk-item">
+        <div>
+          <div class="talk-title">Getting Started with AI in Medical Imaging in Nigeria</div>
+          <div class="talk-event">Invited Speaker, <strong>8th Annual General Meeting and Scientific Conference</strong>, Workshop on Artificial Intelligence in Radiology</div>
+        </div>
+        <div class="talk-date">Sep 9, 2025</div>
+      </div>
+
+      <div class="talk-item">
+        <div>
+          <div class="talk-title">Advancing Radiology AI in Nigeria from Bench to Bedside</div>
+          <div class="talk-event">Invited Talk, <strong>MAILab Research Day</strong>, Medical Artificial Intelligence Laboratory</div>
+        </div>
+        <div class="talk-date">2025</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HONOURS -->
+<section id="honours">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">06</span>
+      <h2>Honours & Awards</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="fade-up">
+      <table class="honours-table">
+        <thead>
+          <tr>
+            <th style="width:70px">Year</th>
+            <th>Award</th>
+            <th style="width:130px;text-align:right;">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="hon-year">2026</td>
+            <td>
+              <div class="hon-name">AFRICAI Award</div>
+              <div class="hon-org">MICCAI 2026, Metadata-Free MRI Reconstruction Paper</div>
+            </td>
+            <td style="text-align:right;"><span class="hon-badge blue">Research Award</span></td>
+          </tr>
+          <tr>
+            <td class="hon-year">2026</td>
+            <td>
+              <div class="hon-name">MICCAI Society Member Grant</div>
+              <div class="hon-org">Medical Image Computing and Computer Assisted Intervention Society</div>
+            </td>
+            <td style="text-align:right;"><span class="hon-badge teal">Grant</span></td>
+          </tr>
+          <tr>
+            <td class="hon-year">2025</td>
+            <td>
+              <div class="hon-name">Mentored Teams to 1st & 2nd Place</div>
+              <div class="hon-org">BraTS Lighthouse Segmentation Challenge · MICCAI 2025, South Korea</div>
+            </td>
+            <td style="text-align:right;"><span class="hon-badge blue">Mentorship</span></td>
+          </tr>
+          <tr>
+            <td class="hon-year">2024</td>
+            <td>
+              <div class="hon-name">SPARK Academy Award and Grant</div>
+              <div class="hon-org">Consortium for Advancement of MRI Education and Research in Africa (CAMERA)</div>
+            </td>
+            <td style="text-align:right;"><span class="hon-badge teal">Award & Grant</span></td>
+          </tr>
+          <tr>
+            <td class="hon-year">2023</td>
+            <td>
+              <div class="hon-name">RISE-MICCAI Award</div>
+              <div class="hon-org">Travel award to attend the Medical Image Computing and Computer-Assisted Intervention (MICCAI) 2023 Conference, Canada</div>
+            </td>
+            <td style="text-align:right;"><span class="hon-badge amber">Travel Award</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <h2>Skills & Tools</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="skills-grid fade-up">
+      <div class="skill-block">
+        <div class="skill-block-title">Deep Learning</div>
+        <div class="skill-items">
+          <span class="sk">PyTorch</span><span class="sk">Transformers</span><span class="sk">GANs</span>
+          <span class="sk">DDPM / Diffusion</span><span class="sk">nnU-Net</span><span class="sk">MAE</span>
+          <span class="sk">Contrastive Learning</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Medical Imaging</div>
+        <div class="skill-items">
+          <span class="sk">MRI Reconstruction</span><span class="sk">Brain Tumour Seg.</span>
+          <span class="sk">Ultrasound</span><span class="sk">Chest X-Ray</span>
+          <span class="sk">DICOM / NIfTI</span><span class="sk">SimpleITK</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Programming</div>
+        <div class="skill-items">
+          <span class="sk">Python</span><span class="sk">Django</span>
+          <span class="sk">NumPy / Pandas</span><span class="sk">Matplotlib</span>
+          <span class="sk">OpenCV</span><span class="sk">Bash</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">HPC & Infrastructure</div>
+        <div class="skill-items">
+          <span class="sk">Compute Canada (HPC)</span><span class="sk">H100 / A100</span>
+          <span class="sk">SLURM</span><span class="sk">Docker</span>
+          <span class="sk">GitHub Actions</span><span class="sk">W&B</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">NLP & Specialist AI</div>
+        <div class="skill-items">
+          <span class="sk">BERT / BERTimbau</span><span class="sk">Graph Neural Nets</span>
+          <span class="sk">Physics-Informed NN</span><span class="sk">Federated Learning</span>
+          <span class="sk">Uncertainty Estimation</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Leadership & Education</div>
+        <div class="skill-items">
+          <span class="sk">Curriculum Design</span><span class="sk">Kaggle Challenges</span>
+          <span class="sk">GitHub Classroom</span><span class="sk">Team Management</span>
+          <span class="sk">Excel Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">07</span>
+      <h2>Certifications</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="cert-grid fade-up">
+
+      <div class="cert-card">
+        <div class="cert-name">Proficiency Certification</div>
+        <div class="cert-org">European Society for Magnetic Resonance in Medicine and Biology (ESMRMB)</div>
+        <div class="cert-year">Active</div>
+      </div>
+
+      <div class="cert-card blue-l">
+        <div class="cert-name">Medical Image Analysis & Deep Learning in Python</div>
+        <div class="cert-org">McMedHacks, McGill Medical Physics Unit (MPU), Lady Davis Institute, EngerLab, McGill Centre for Translational Research in Cancer</div>
+        <div class="cert-year">2023</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="section-num">08</span>
+      <h2>Get in <em>Touch</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-desc">
+          Open to research collaborations, speaking engagements, and partnerships advancing AI for healthcare across Africa. Feel free to reach out.
+        </p>
+        <a href="/cdn-cgi/l/email-protection#4930263c3b092c24282025672a2624" class="btn" style="background:#fff;color:var(--navy);border:1.5px solid #fff;">Send an Email</a>
+      </div>
+      <div class="contact-links">
+        <a href="https://scholar.google.com/citations?user=3ewd3ikAAAAJ&hl=en" class="clink" target="_blank">
+          <span class="clink-icon" style="font-size:0.75rem;font-weight:700;letter-spacing:-0.02em;">GS</span>
+          <div><div class="clink-label">Google Scholar</div><div class="clink-val">Aondona Moses Iorumbur</div></div>
+        </a>
+        <a href="https://github.com/AondonaMoses" class="clink" target="_blank">
+          <span class="clink-icon">⌥</span>
+          <div><div class="clink-label">GitHub</div><div class="clink-val">github.com/AondonaMoses</div></div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/aondona-iorumbur-48373a197" class="clink" target="_blank">
+          <span class="clink-icon">in</span>
+          <div><div class="clink-label">LinkedIn</div><div class="clink-val">linkedin.com/in/aondona-iorumbur</div></div>
+        </a>
+        <a href="https://twitter.com/aondona_moses" class="clink" target="_blank">
+          <span class="clink-icon">𝕏</span>
+          <div><div class="clink-label">Twitter / X</div><div class="clink-val">@aondona_moses</div></div>
+        </a>
+        <div class="clink" style="cursor:default;">
+          <span class="clink-icon">📍</span>
+          <div><div class="clink-label">Location</div><div class="clink-val">Lagos, Nigeria</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Aondona Moses Iorumbur</span> · Medical AI Researcher · Lagos, Nigeria</p>
+  <p>Deployed on <span>GitHub Pages</span></p>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  els.forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.08 + 's';
+    obs.observe(el);
+  });
+  setTimeout(() => { els.forEach(el => el.classList.add('visible')); }, 1500);
+
+  // Dark mode toggle
+  function toggleDark() {
+    const isDark = document.body.classList.toggle('dark');
+    document.getElementById('darkIcon').textContent = isDark ? '☀️' : '🌙';
+    document.getElementById('darkLabel').textContent = isDark ? 'Light' : 'Dark';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }
+
+  // Persist preference
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('darkIcon').textContent = '☀️';
+    document.getElementById('darkLabel').textContent = 'Light';
+  }
+</script>
+</body>
+</html>
